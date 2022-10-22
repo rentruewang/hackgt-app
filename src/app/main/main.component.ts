@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Portfolio } from '../portfolio/portfolio.model';
 
 @Component({
   selector: 'app-main',
@@ -7,23 +8,24 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent {
-  public inputs = [
-    { name: 'input1', placeholder: 'Consumer Discretionary' },
-    { name: 'input2', placeholder: 'Consumer Staples' },
-    { name: 'input3', placeholder: 'Energy' },
-    { name: 'input4', placeholder: 'Financials' },
-    { name: 'input5', placeholder: 'Health' },
-    { name: 'input6', placeholder: 'Industrials' },
-    { name: 'input7', placeholder: 'Materials' },
-    { name: 'input8', placeholder: 'Real Estate' },
-    { name: 'input9', placeholder: 'Technology' },
-    { name: 'input10', placeholder: 'Communication Services' },
-    { name: 'input11', placeholder: 'Utilities' }
-  ];
   public type: string = 'percent';
   public dollars: Array<number> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   public percents: Array<number> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   public total: number = 0;
+  public submitted: boolean = false;
+  public portfolio: Array<Portfolio> = [
+    { name: 'Consumer Discretionary', percent: this.percents[0] },
+    { name: 'Consumer Staples', percent: this.percents[1] },
+    { name: 'Energy', percent: this.percents[2] },
+    { name: 'Financials', percent: this.percents[3] },
+    { name: 'Health', percent: this.percents[4] },
+    { name: 'Industrials', percent: this.percents[5] },
+    { name: 'Materials', percent: this.percents[6] },
+    { name: 'Real Estate', percent: this.percents[7] },
+    { name: 'Technology', percent: this.percents[8] },
+    { name: 'Communication Services', percent: this.percents[9] },
+    { name: 'Utilities', percent: this.percents[10] }
+  ];
 
   public sum = (arr: number[]) => {
     this.total = 0;
@@ -49,7 +51,11 @@ export class MainComponent {
     }
 
     if (form.valid) {
-      console.log(this.percents);
+      for (let i = 0; i < this.portfolio.length; i++) {
+        this.portfolio[i].percent = this.percents[i];
+      }
+      console.log(this.portfolio);
+      this.submitted = true;
     }
   }
 }

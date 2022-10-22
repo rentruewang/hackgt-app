@@ -9,9 +9,9 @@
     <br>
 
     <ng-container *ngIf="type == 'percent'">
-      <ng-container *ngFor="let input of inputs; let i = index">
+      <ng-container *ngFor="let input of portfolio; let i = index">
         <mat-form-field>
-          <input matInput type="number" placeholder="{{input.placeholder}}" name="{{input.name}}"
+          <input matInput type="number" placeholder="{{input.name}}" name="{{input.name}}"
             [(ngModel)]="percents[i]" [ngModelOptions]="{standalone: true}" (change)="this.sum(this.percents)">
           <span matSuffix>%&nbsp;</span>
         </mat-form-field>
@@ -23,9 +23,9 @@
     </ng-container>
 
     <ng-container *ngIf="type != 'percent'">
-      <mat-form-field *ngFor="let input of inputs; let i = index">
-        <input matInput type="number" placeholder="{{input.placeholder}}" name="{{input.name}}"
-          [(ngModel)]="percents[i]" [ngModelOptions]="{standalone: true}">
+      <mat-form-field *ngFor="let input of portfolio; let i = index">
+        <input matInput type="number" placeholder="{{input.name}}" name="{{input.name}}"
+          [(ngModel)]="dollars[i]" [ngModelOptions]="{standalone: true}">
         <span matPrefix>$&nbsp;</span>
       </mat-form-field>
     </ng-container>
@@ -34,3 +34,5 @@
     <button type="submit" mat-raised-button color="primary">Submit</button>
   </form>
 </mat-card>
+
+<app-portfolio *ngIf="submitted" [portfolio]="portfolio"></app-portfolio>

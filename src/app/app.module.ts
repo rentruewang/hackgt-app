@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatSliderModule } from '@angular/material/slider'
+import { HttpClientModule } from '@angular/common/http';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +21,7 @@ import { HeaderComponent } from './header/header.component';
 import { PurposeComponent } from './purpose/purpose.component';
 import { AboutComponent } from './about/about.component';
 import { MainComponent } from './main/main.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { MainComponent } from './main/main.component';
     HeaderComponent,
     PurposeComponent,
     AboutComponent,
-    MainComponent
+    MainComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import { MainComponent } from './main/main.component';
     MatButtonModule,
     MatCardModule,
     MatSliderModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

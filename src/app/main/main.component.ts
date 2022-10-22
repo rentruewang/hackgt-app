@@ -8,21 +8,21 @@ import { NgForm } from '@angular/forms';
 })
 export class MainComponent {
   public inputs = [
-    { name: 'input1', placeholder: 'Input 1' },
-    { name: 'input2', placeholder: 'Input 2' },
-    { name: 'input3', placeholder: 'Input 3' },
-    { name: 'input4', placeholder: 'Input 4' },
-    { name: 'input5', placeholder: 'Input 5' },
-    { name: 'input6', placeholder: 'Input 6' },
-    { name: 'input7', placeholder: 'Input 7' },
-    { name: 'input8', placeholder: 'Input 8' },
-    { name: 'input9', placeholder: 'Input 9' },
-    { name: 'input10', placeholder: 'Input 10' },
-    { name: 'input11', placeholder: 'Input 11' }
+    { name: 'input1', placeholder: 'Consumer Discretionary' },
+    { name: 'input2', placeholder: 'Consumer Staples' },
+    { name: 'input3', placeholder: 'Energy' },
+    { name: 'input4', placeholder: 'Financials' },
+    { name: 'input5', placeholder: 'Health' },
+    { name: 'input6', placeholder: 'Industrials' },
+    { name: 'input7', placeholder: 'Materials' },
+    { name: 'input8', placeholder: 'Real Estate' },
+    { name: 'input9', placeholder: 'Technology' },
+    { name: 'input10', placeholder: 'Communication Services' },
+    { name: 'input11', placeholder: 'Utilities' }
   ];
   public type: string = 'percent';
-  public dollars: Array<number> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-  public percents: Array<number> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  public dollars: Array<number> = [];
+  public percents: Array<number> = [];
   public total: number = 0;
 
   public sum = (arr: number[]) => {
@@ -36,8 +36,8 @@ export class MainComponent {
 
     if (this.type === 'percent') {
       this.sum(this.percents);
-      if (this.total !== 100) {
-        alert('Percentages must add up to 100%');
+      if (this.total !==  100) {
+        alert('Percentages must be equal to 100%');
         return;
       }
     } else {

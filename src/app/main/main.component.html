@@ -5,16 +5,27 @@
       <mat-button-toggle value="dollar">By Dollar Amount</mat-button-toggle>
     </mat-button-toggle-group>
 
+    <br>
+    <br>
+
     <ng-container *ngIf="type == 'percent'">
-      <mat-form-field *ngFor="let input of inputs; let i = index">
-        <input matInput type="number" placeholder="{{input.placeholder}}" name="{{input.name}}" [(ngModel)]="percents[i]" [ngModelOptions]="{standalone: true}">
-        <span matSuffix>%&nbsp;</span>
-      </mat-form-field>
+      <ng-container *ngFor="let input of inputs; let i = index">
+        <mat-form-field>
+          <input matInput type="number" placeholder="{{input.placeholder}}" name="{{input.name}}"
+            [(ngModel)]="percents[i]" [ngModelOptions]="{standalone: true}" (change)="this.sum(this.percents)">
+          <span matSuffix>%&nbsp;</span>
+        </mat-form-field>
+        <mat-slider (change)="this.sum(this.percents)" name="{{input.name}}" [thumbLabel]=true [max]=100 [min]=0 [step]=1 [(ngModel)]="percents[i]" color="primary">
+        </mat-slider>
+      </ng-container>
+      Total &nbsp;&nbsp;&nbsp; <mat-slider [(ngModel)]="this.total" [disabled]="true" name="Total"></mat-slider>{{this.total}}
+      <mat-error *ngIf="this.total > 100">Total must equal 100%</mat-error>
     </ng-container>
 
     <ng-container *ngIf="type != 'percent'">
       <mat-form-field *ngFor="let input of inputs; let i = index">
-        <input matInput type="number" placeholder="{{input.placeholder}}" name="{{input.name}}" [(ngModel)]="percents[i]" [ngModelOptions]="{standalone: true}">
+        <input matInput type="number" placeholder="{{input.placeholder}}" name="{{input.name}}"
+          [(ngModel)]="percents[i]" [ngModelOptions]="{standalone: true}">
         <span matPrefix>$&nbsp;</span>
       </mat-form-field>
     </ng-container>

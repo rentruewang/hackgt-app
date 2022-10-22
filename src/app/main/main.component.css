@@ -1,15 +1,22 @@
 mat-form-field {
-    width: 20%;
-    margin: auto;
-    padding: 10px;
-  }
+  width: 15%;
+  margin: auto;
+  padding: 10px;
+}
 
-  .mat-card {
-    width: 70%;
-    margin: auto;
-  }
+mat-slider {
+  width: 30%;
+  margin: auto;
+  padding: 10px;
+  color-scheme: light;
+}
 
-  :host {
-    display: block;
-    margin-top: 1rem;
-  }
+.mat-card {
+  width: 70%;
+  margin: auto;
+}
+
+:host {
+  display: block;
+  margin-top: 1rem;
+}

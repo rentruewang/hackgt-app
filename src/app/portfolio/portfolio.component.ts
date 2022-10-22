@@ -10,9 +10,9 @@ import { Portfolio } from './portfolio.model';
 export class PortfolioComponent {
   @Input() portfolio: Array<Portfolio> = [{name: 'Consumer Discretionary', percent: 0}];
   private svg: any;
-  private margin = 50;
-  private width = 750 - (this.margin * 2);
-  private height = 400 - (this.margin * 2);
+  private margin = 100;
+  private width = 900 - (this.margin * 2);
+  private height = 500 - (this.margin * 1.2);
   constructor() { }
 
   private createSvg(): void {
@@ -21,7 +21,7 @@ export class PortfolioComponent {
       .attr("width", this.width + (this.margin * 2))
       .attr("height", this.height + (this.margin * 2))
       .append("g")
-      .attr("transform", "translate(" + this.margin + "," + this.margin + ")");
+      .attr("transform", "translate(" + this.margin + "," + this.margin/5 + ")");
   }
 
   private drawBars(data: Array<Portfolio>): void {
@@ -64,5 +64,4 @@ export class PortfolioComponent {
     this.createSvg();
     this.drawBars(this.portfolio);
   }
-
 }

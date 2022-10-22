@@ -32,6 +32,7 @@ export class MainComponent {
     for (let i = 0; i < arr.length; i++) {
       this.total += arr[i];
     }
+    this.submitted = false;
   }
 
   public onSubmit(form: NgForm) {
@@ -52,9 +53,8 @@ export class MainComponent {
 
     if (form.valid) {
       for (let i = 0; i < this.portfolio.length; i++) {
-        this.portfolio[i].percent = this.percents[i];
+        this.portfolio[i].percent = this.percents[i] | 0;
       }
-      console.log(this.portfolio);
       this.submitted = true;
     }
   }

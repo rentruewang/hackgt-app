@@ -25,7 +25,7 @@
     <ng-container *ngIf="type != 'percent'">
       <mat-form-field *ngFor="let input of portfolio; let i = index">
         <input matInput type="number" placeholder="{{input.name}}" name="{{input.name}}"
-          [(ngModel)]="dollars[i]" [ngModelOptions]="{standalone: true}">
+          [(ngModel)]="dollars[i]" [ngModelOptions]="{standalone: true}" (change)="this.submitted = false">
         <span matPrefix>$&nbsp;</span>
       </mat-form-field>
     </ng-container>

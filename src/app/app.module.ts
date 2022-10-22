@@ -22,6 +22,7 @@ import { PurposeComponent } from './purpose/purpose.component';
 import { AboutComponent } from './about/about.component';
 import { MainComponent } from './main/main.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { WordcloudComponent } from './wordcloud/wordcloud.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     PurposeComponent,
     AboutComponent,
     MainComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    WordcloudComponent
   ],
   imports: [
     BrowserModule,

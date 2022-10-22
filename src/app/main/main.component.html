@@ -11,21 +11,23 @@
     <ng-container *ngIf="type == 'percent'">
       <ng-container *ngFor="let input of portfolio; let i = index">
         <mat-form-field>
-          <input matInput type="number" placeholder="{{input.name}}" name="{{input.name}}"
-            [(ngModel)]="percents[i]" [ngModelOptions]="{standalone: true}" (change)="this.sum(this.percents)">
+          <input matInput type="number" placeholder="{{input.name}}" name="{{input.name}}" [(ngModel)]="percents[i]"
+            [ngModelOptions]="{standalone: true}" (change)="this.sum(this.percents)">
           <span matSuffix>%&nbsp;</span>
         </mat-form-field>
-        <mat-slider (change)="this.sum(this.percents)" name="{{input.name}}" [thumbLabel]=true [max]=100 [min]=0 [step]=1 [(ngModel)]="percents[i]" color="primary">
+        <mat-slider (change)="this.sum(this.percents)" name="{{input.name}}" [thumbLabel]=true [max]=100 [min]=0
+          [step]=1 [(ngModel)]="percents[i]" color="primary">
         </mat-slider>
       </ng-container>
-      Total &nbsp;&nbsp;&nbsp; <mat-slider [(ngModel)]="this.total" [disabled]="true" name="Total"></mat-slider>{{this.total}}
+      Total &nbsp;&nbsp;&nbsp; <mat-slider [(ngModel)]="this.total" [disabled]="true" name="Total"></mat-slider>
+      {{this.total}}
       <mat-error *ngIf="this.total > 100">Total must equal 100%</mat-error>
     </ng-container>
 
     <ng-container *ngIf="type != 'percent'">
       <mat-form-field *ngFor="let input of portfolio; let i = index">
-        <input matInput type="number" placeholder="{{input.name}}" name="{{input.name}}"
-          [(ngModel)]="dollars[i]" [ngModelOptions]="{standalone: true}" (change)="this.submitted = false">
+        <input matInput type="number" placeholder="{{input.name}}" name="{{input.name}}" [(ngModel)]="dollars[i]"
+          [ngModelOptions]="{standalone: true}" (change)="this.submitted = false">
         <span matPrefix>$&nbsp;</span>
       </mat-form-field>
     </ng-container>
@@ -36,3 +38,4 @@
 </mat-card>
 
 <app-portfolio *ngIf="submitted" [portfolio]="portfolio"></app-portfolio>
+<app-wordcloud [words]="words"></app-wordcloud>

@@ -13,6 +13,7 @@ export class MainComponent {
   public percents: Array<number> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   public total: number = 0;
   public submitted: boolean = false;
+  public words = [{ 'text': 'said', 'value': 22 }, { 'text': 'end', 'value': 13 }, { 'text': 'look', 'value': 18 }, { 'text': 'consider', 'value': 16 }, { 'text': 'after', 'value': 12 }, { 'text': 'under', 'value': 11 }, { 'text': 'story', 'value': 11 }, { 'text': 'over', 'value': 17 }, { 'text': 'up', 'value': 33 }, { 'text': 'got', 'value': 19 }, { 'text': 'weeks', 'value': 11 }, { 'text': 'few', 'value': 12 }, { 'text': 'conclusion', 'value': 11 }, { 'text': 'seen', 'value': 12 }, { 'text': 'risk', 'value': 19 }, { 'text': 'country', 'value': 16 }, { 'text': 'states', 'value': 17 }, { 'text': 'being', 'value': 13 }, { 'text': 'president', 'value': 18 }, { 'text': 'out', 'value': 15 }, { 'text': 'back', 'value': 15 }, { 'text': 'people', 'value': 24 }, { 'text': 'speak', 'value': 12 }, { 'text': 'everyone', 'value': 18 }];
   public portfolio: Array<Portfolio> = [
     { name: 'Consumer Discretionary', percent: this.percents[0] },
     { name: 'Consumer Staples', percent: this.percents[1] },
@@ -39,7 +40,7 @@ export class MainComponent {
 
     if (this.type === 'percent') {
       this.sum(this.percents);
-      if (this.total !==  100) {
+      if (this.total !== 100) {
         alert('Percentages must be equal to 100%');
         return;
       }

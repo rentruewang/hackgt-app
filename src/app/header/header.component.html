@@ -1,7 +1,14 @@
 <mat-toolbar color="primary">
-    <span>
-        <a routerLink="">
-          {{title}}
-        </a>
-      </span>
-  </mat-toolbar>
+  <span>
+    <a routerLink="">
+      {{title}}
+    </a>
+  </span>
+  <ul *ngIf="!isMobile">
+    <li>
+      <a routerLink="/purpose" class="small">
+        Purpose
+      </a>
+    </li>
+  </ul>
+</mat-toolbar>

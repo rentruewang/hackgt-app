@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   title = 'HackGT App';
+  public isMobile = ( window.innerWidth < 1200 );
 }

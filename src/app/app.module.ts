@@ -11,12 +11,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HeaderComponent } from './header/header.component';
 import { PurposeComponent } from './purpose/purpose.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    PurposeComponent
+    PurposeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,15 @@
+mat-form-field {
+    width: 20%;
+    margin: auto;
+    padding: 10px;
+  }
+
+  .mat-card {
+    width: 70%;
+    margin: auto;
+  }
+
+  :host {
+    display: block;
+    margin-top: 1rem;
+  }

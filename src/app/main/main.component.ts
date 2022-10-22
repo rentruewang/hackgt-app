@@ -21,8 +21,8 @@ export class MainComponent {
     { name: 'input11', placeholder: 'Utilities' }
   ];
   public type: string = 'percent';
-  public dollars: Array<number> = [];
-  public percents: Array<number> = [];
+  public dollars: Array<number> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  public percents: Array<number> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   public total: number = 0;
 
   public sum = (arr: number[]) => {

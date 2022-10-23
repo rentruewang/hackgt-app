@@ -37,7 +37,7 @@
   </form>
 </mat-card>
 
-<div>
-  <app-portfolio *ngIf="submitted" [portfolio]="portfolio"></app-portfolio>
+<div *ngIf="submitted">
+  <app-portfolio [portfolio]="portfolio"></app-portfolio>
   <app-wordcloud [words]="words"></app-wordcloud>
 </div>

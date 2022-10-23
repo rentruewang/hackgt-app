@@ -8,9 +8,8 @@ describe('WordcloudComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WordcloudComponent ]
-    })
-    .compileComponents();
+      declarations: [WordcloudComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(WordcloudComponent);
     component = fixture.componentInstance;

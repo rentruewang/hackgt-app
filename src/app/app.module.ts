@@ -6,7 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatSliderModule } from '@angular/material/slider'
+import { MatSliderModule } from '@angular/material/slider';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -34,7 +34,7 @@ import { WordcloudComponent } from './wordcloud/wordcloud.component';
     AboutComponent,
     MainComponent,
     PortfolioComponent,
-    WordcloudComponent
+    WordcloudComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,12 +56,10 @@ import { WordcloudComponent } from './wordcloud/wordcloud.component';
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    })
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
   ],
-  providers: [
-    MatDatepickerModule
-  ],
-  bootstrap: [AppComponent]
+  providers: [MatDatepickerModule],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

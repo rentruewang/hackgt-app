@@ -1,4 +1,5 @@
 export class Portfolio {
-    name: string = '';
+    name: string = 'hi';
     percent: number = 0;
+    type: string = '1';
 }

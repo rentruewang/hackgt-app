@@ -12,14 +12,14 @@ export class WordcloudComponent implements OnInit {
 
   private svg: any;
   private margin = 100;
-  private width = 800 - (this.margin * 2);
-  private height = 800 - (this.margin * 1.2);
+  private width = 500 - (this.margin * 2);
+  private height = 500 - (this.margin * 1.2);
   constructor() { }
 
   private createSvg(): void {
     this.svg = d3.select("figure#cloud")
       .append("svg")
-      .attr("width", this.width + (this.margin * 2))
+      .attr("width", this.width + (this.margin * 1.2))
       .attr("height", this.height + (this.margin * 2))
       .attr("font-family", "sans-serif")
       .attr("text-anchor", "middle");
@@ -51,7 +51,7 @@ export class WordcloudComponent implements OnInit {
       .padding(0)
       .rotate(0)
       .font("sans-serif")
-      .fontSize((d: any) => d.value**2 * 0.2)
+      .fontSize((d: any) => d.value**2 * 0.1)
       .on("word", ({ size, x, y, rotate, text }: any) => {
         this.svg
           .append("text")

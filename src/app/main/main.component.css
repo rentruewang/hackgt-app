@@ -21,7 +21,12 @@ mat-slider {
   margin-top: 1rem;
 }
 
-div {
+button {
+  margin: 10px;
+}
+
+.center-div {
   display: flex;
   justify-content: center;
+  translate: 0% 10%;
 }

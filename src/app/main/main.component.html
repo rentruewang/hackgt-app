@@ -1,9 +1,14 @@
-<mat-card>
+<mat-card *ngIf="!submitted">
   <form (submit)="onSubmit(inputForm)" #inputForm="ngForm">
     <mat-button-toggle-group name="type" [(ngModel)]="type">
       <mat-button-toggle value="percent">By Percentage</mat-button-toggle>
       <mat-button-toggle value="dollar">By Dollar Amount</mat-button-toggle>
     </mat-button-toggle-group>
+
+    <mat-form-field>
+      <input matInput type="number" name="portfolioScale" [(ngModel)]="portfolioScale" placeholder="Scale">
+      <span matSuffix>%&nbsp;</span>
+    </mat-form-field>
 
     <br>
     <br>
@@ -38,6 +43,9 @@
 </mat-card>
 
 <div *ngIf="submitted">
-  <app-portfolio [portfolio]="portfolio"></app-portfolio>
-  <app-wordcloud [words]="words"></app-wordcloud>
+  <div class="center-div">
+    <app-portfolio [portfolio]="portfolio"></app-portfolio>
+    <app-wordcloud></app-wordcloud>
+  </div>
+  <button mat-raised-button color="primary" (click)="submitted = false">Back</button>
 </div>
